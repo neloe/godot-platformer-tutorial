@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1.gd" type="Script" id=3]
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/set2_tiles.png" type="Texture" id=5]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1600, 10 )
@@ -14,8 +15,9 @@ script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
+collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 65528, 0, 0, 131064, 0, 0, 65551, 4, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 65555, 5, 0, 196600, 0, 0, 131096, 4, 0, 131097, 2, 0, 131098, 2, 0, 131099, 2, 0, 131100, 5, 0, 262136, 0, 0, 327672, 0, 0, 262153, 4, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 5, 0, 393208, 0, 0, 327700, 4, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 5, 0, 458744, 0, 0, 524280, 0, 0, 589816, 0, 0, 589817, 1, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 3, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0 )
+tile_data = PoolIntArray( 65528, 0, 0, 131064, 0, 0, 65551, 4, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 65555, 5, 0, 196600, 0, 0, 131096, 4, 0, 131097, 2, 0, 131098, 2, 0, 131099, 2, 0, 131100, 5, 0, 262136, 0, 0, 327672, 0, 0, 262153, 4, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 5, 0, 262172, 1, 0, 262173, 2, 0, 262174, 2, 0, 262175, 2, 0, 262176, 2, 0, 262177, 2, 0, 262178, 2, 0, 262179, 3, 0, 393208, 0, 0, 327700, 4, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 5, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 458744, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 524280, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 589816, 0, 0, 589817, 1, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 3, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0 )
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( -250, 230 )
@@ -34,9 +36,10 @@ drag_margin_left = 0.3
 drag_margin_right = 0.3
 editor_draw_limits = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Killzone" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2( 1600, 896 )
 shape = SubResource( 1 )
 
@@ -81,4 +84,22 @@ motion_mirroring = Vector2( 1120, 840 )
 scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 5 )
 centered = false
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[node name="Coin1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100.908, 349.813 )
+
+[node name="Coin2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 438.566, 396.43 )
+
+[node name="Coin3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 672.912, 440.527 )
+
+[node name="Coin4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 299.975, 245.24 )
+
+[node name="Coin5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 999.231, -36.9828 )
+
+[node name="Coin6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 691.811, 150.745 )
+[connection signal="body_entered" from="Killzone" to="." method="_on_Area2D_body_entered"]

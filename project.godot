@@ -39,6 +39,14 @@ jump={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+2d_physics/layer_3="Fallzone"
+2d_physics/layer_4="Coin"
+2d_physics/layer_5="Fireball"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
