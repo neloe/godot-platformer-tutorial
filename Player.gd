@@ -4,10 +4,11 @@ const WALK_SPEED = 180
 const GRAVITY = 40
 const JUMPFORCE = -1100
 
+var coins = 0
 
 var velocity = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed('right'):
 		velocity.x = WALK_SPEED
 		$Sprite.play('walk')
@@ -30,4 +31,10 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
+	
+	if coins == 3:
+		get_tree().change_scene("res://Level1.tscn")
 
+func add_coin():
+	coins += 1
+	
